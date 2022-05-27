@@ -17,8 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@/types": ["core/types"],
-      "@/Template": ["components/layout/Template"],
-      "@/modules": ["components/modules"],
+      "@components/layout": ["components/layout"],
+      "@components/modules": ["components/modules"],
       "@/firebase": ["core/services/firebase"],
       "@/images": ["public/images"],
       "@/contexts": ["contexts"],
