@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { Template } from "@/Template";
-import { Homepage, Illustration } from "@/modules";
 import "@/firebase";
+import { Template } from "@components/layout";
+import { Homepage, Illustration } from "@components/modules";
 
 const Home: NextPage = () => {
   return (

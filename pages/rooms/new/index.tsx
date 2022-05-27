@@ -1,6 +1,6 @@
+import { Template } from "@components/layout";
+import { Illustration, NewRoomPage } from "@components/modules";
 import type { NextPage } from "next";
-import { Template } from "@/Template";
-import { Illustration, NewRoomPage } from "@/modules";
 
 const NewRoom: NextPage = () => {
   return (
