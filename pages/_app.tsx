@@ -1,12 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { AppProvider } from "@/contexts";
+import { AuthProvider } from "@/contexts";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AppProvider>
+    <AuthProvider>
       <Component {...pageProps} />
-    </AppProvider>
+    </AuthProvider>
   );
 }
 
