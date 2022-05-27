@@ -1,20 +1,19 @@
 import Image from "next/image";
 import { Button } from "components/widgets/Button";
 import { useRouter } from "next/router";
-import { app, auth, db } from "@/firebase";
+import { useAuth } from "@/hooks";
 import { googleIcon, logo } from "@/images";
 
 export const Homepage = () => {
+  const { user, signInWithGoogle } = useAuth();
   const router = useRouter();
 
-  function signIn() {
-    const provider = new auth.GoogleAuthProvider();
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle();
+    }
 
-    auth.signInWithPopup(auth.getAuth(app), provider).then((result) => {
-      console.log(result);
-
-      router.push("/rooms/new");
-    });
+    router.push("/rooms/new");
   }
 
   return (
@@ -25,7 +24,7 @@ export const Homepage = () => {
         </div>
 
         <button
-          onClick={signIn}
+          onClick={handleCreateRoom}
           className="w-full h-12 mt-16 flex justify-center items-center bg-[#ea4335] text-white font-medium rounded-lg transition-all duration-200 hover:brightness-90 disabled:opacity-60"
         >
           <div className="mr-2 -mb-1">
