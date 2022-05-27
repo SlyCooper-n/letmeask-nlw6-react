@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import "@/firebase";
 import { Template } from "@components/layout";
 import { Homepage, Illustration } from "@components/modules";
 
