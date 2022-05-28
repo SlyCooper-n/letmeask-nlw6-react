@@ -3,10 +3,14 @@ import { Button } from "components/widgets/Button";
 import { useRouter } from "next/router";
 import { useAuth } from "@/hooks";
 import { googleIcon, logo } from "@/images";
+import { FormEvent, useRef, useState } from "react";
+import { app, db } from "@/firebase";
 
 export const Homepage = () => {
   const { user, signInWithGoogle } = useAuth();
   const router = useRouter();
+  const [roomCode, setRoomCode] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   async function handleCreateRoom() {
     if (!user) {
@@ -14,6 +18,26 @@ export const Homepage = () => {
     }
 
     router.push("/rooms/new");
+  }
+
+  async function handleJoinRoom(event: FormEvent) {
+    event.preventDefault();
+
+    if (roomCode.trim() === "") {
+      setRoomCode("");
+      inputRef.current?.focus();
+      return;
+    }
+
+    const roomRef = db.ref(db.getDatabase(app), `rooms/${roomCode}`);
+    const room = await db.get(roomRef);
+
+    if (!room.exists) {
+      alert("Room does not exist.");
+      return;
+    }
+
+    router.push(`/rooms/${roomCode}`);
   }
 
   return (
@@ -24,6 +48,7 @@ export const Homepage = () => {
         </div>
 
         <button
+          type="button"
           onClick={handleCreateRoom}
           className="w-full h-12 mt-16 flex justify-center items-center bg-[#ea4335] text-white font-medium rounded-lg transition-all duration-200 hover:brightness-90 disabled:opacity-60"
         >
@@ -37,10 +62,13 @@ export const Homepage = () => {
           Or enter a room
         </div>
 
-        <form>
+        <form onSubmit={handleJoinRoom}>
           <input
+            ref={inputRef}
             type="text"
             placeholder="Type the room code"
+            value={roomCode}
+            onChange={(event) => setRoomCode(event.target.value)}
             className="w-full h-12 px-4 bg-white border border-primary-200 rounded-lg"
           />
 
