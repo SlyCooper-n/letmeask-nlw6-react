@@ -1,9 +1,9 @@
+import { FormEvent, useRef, useState } from "react";
 import Image from "next/image";
-import { Button } from "components/widgets/Button";
 import { useRouter } from "next/router";
+import { Button } from "components/widgets/Button";
 import { useAuth } from "@/hooks";
 import { googleIcon, logo } from "@/images";
-import { FormEvent, useRef, useState } from "react";
 import { app, db } from "@/firebase";
 
 export const Homepage = () => {
@@ -32,7 +32,7 @@ export const Homepage = () => {
     const roomRef = db.ref(db.getDatabase(app), `rooms/${roomCode}`);
     const room = await db.get(roomRef);
 
-    if (!room.exists) {
+    if (!room.exists()) {
       alert("Room does not exist.");
       return;
     }
