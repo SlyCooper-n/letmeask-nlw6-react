@@ -19,6 +19,7 @@
       "@/types": ["core/types"],
       "@components/layout": ["components/layout"],
       "@components/modules": ["components/modules"],
+      "@components/widgets": ["components/widgets"],
       "@/firebase": ["core/services/firebase"],
       "@/images": ["public/images"],
       "@/contexts": ["contexts"],
