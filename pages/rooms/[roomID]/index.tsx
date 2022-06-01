@@ -1,11 +1,14 @@
 import { app, db } from "@/firebase";
 import { logo } from "@/images";
+import { DatabaseRoomProps, QuestionType } from "@/types";
 import { Template } from "@components/layout";
+import { Question } from "@components/modules";
 import { Button, RoomCode } from "@components/widgets";
 import { useAuth } from "hooks/useAuth";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const RoomPage = () => {
   const { user } = useAuth();
@@ -13,6 +16,27 @@ const RoomPage = () => {
   const { roomID } = router.query;
   const [newQuestion, setNewQuestion] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [title, setTitle] = useState("");
+  const [questions, setQuestions] = useState<QuestionType[]>([]);
+
+  useEffect(() => {
+    const roomRef = db.ref(db.getDatabase(app), `rooms/${roomID}`);
+
+    db.onValue(roomRef, (snapshot) => {
+      const databaseRoom = snapshot.val() as DatabaseRoomProps;
+      const roomQuestions = databaseRoom?.questions ?? {};
+
+      const parsedQuestions = Object.entries(roomQuestions).map(
+        ([key, value]) => ({
+          id: key,
+          ...value,
+        })
+      );
+
+      setTitle(databaseRoom?.title);
+      setQuestions(parsedQuestions);
+    });
+  }, [roomID]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -37,7 +61,11 @@ const RoomPage = () => {
     };
 
     setNewQuestion("");
-    await db.push(db.ref(db.getDatabase(app)), question);
+    await db.push(
+      db.ref(db.getDatabase(app), `rooms/${roomID}/questions`),
+      question
+    );
+    toast.success("Question sent successfully");
   }
 
   return (
@@ -52,13 +80,16 @@ const RoomPage = () => {
 
       <main className="max-w-[800px] mx-auto">
         <div className="mx-6 my-8 sm:flex sm:items-center">
-          <h1 className="text-2xl text-primary-900 font-secondary">
-            React Room
+          <h1 className="text-2xl text-primary-900 font-secondary font-medium">
+            Room {title}
           </h1>
 
-          <span className="mt-4 sm:mt-0 sm:ml-4 px-4 py-2 inline-block sm:inline bg-[#e559f9] text-white text-sm font-medium rounded-full">
-            13 questions
-          </span>
+          {questions.length > 0 && (
+            <span className="mt-4 sm:mt-0 sm:ml-4 px-4 py-2 inline-block sm:inline bg-[#e559f9] text-white text-sm font-medium rounded-full">
+              {questions.length}{" "}
+              {questions.length === 1 ? "question" : "questions"}
+            </span>
+          )}
         </div>
 
         <form onSubmit={handleSendQuestion}>
@@ -96,6 +127,12 @@ const RoomPage = () => {
             </Button>
           </div>
         </form>
+
+        <section className="mt-8">
+          {questions.map((question) => (
+            <Question key={question.id} {...question} />
+          ))}
+        </section>
       </main>
     </Template>
   );
