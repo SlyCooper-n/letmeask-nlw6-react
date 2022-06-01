@@ -21,7 +21,7 @@ export const RoomCode = (props: RoomCodeProps) => {
           <Image src={copy} alt="Copy room code" />
         </div>
         <span className="flex-1 w-60 pr-4 pl-3 block self-center text-sm font-medium">
-          Room {props.code}
+          Room #{props.code}
         </span>
       </button>
 
