@@ -5,6 +5,7 @@ import { Button } from "components/widgets/Button";
 import { useAuth } from "@/hooks";
 import { googleIcon, logo } from "@/images";
 import { app, db } from "@/firebase";
+import toast, { Toaster } from "react-hot-toast";
 
 export const Homepage = () => {
   const { user, signInWithGoogle } = useAuth();
@@ -15,6 +16,7 @@ export const Homepage = () => {
   async function handleCreateRoom() {
     if (!user) {
       await signInWithGoogle();
+      toast.success("Logged in");
     }
 
     router.push("/rooms/new");
@@ -33,7 +35,7 @@ export const Homepage = () => {
     const room = await db.get(roomRef);
 
     if (!room.exists()) {
-      alert("Room does not exist.");
+      toast.error("Room does not exist.");
       return;
     }
 
@@ -72,10 +74,12 @@ export const Homepage = () => {
             className="w-full h-12 px-4 bg-white border border-primary-200 rounded-lg"
           />
 
-          <Button type="submit" mystyle="w-full h-12 mt-4">
+          <Button type="submit" mystyle="w-full mt-4">
             Enter the room
           </Button>
         </form>
+
+        <Toaster />
 
         <style jsx>{`
           div.my-8::before {

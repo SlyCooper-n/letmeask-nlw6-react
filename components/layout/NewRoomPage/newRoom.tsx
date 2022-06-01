@@ -6,6 +6,7 @@ import { FormEvent, useRef, useState } from "react";
 import { app, db } from "@/firebase";
 import { useAuth } from "hooks/useAuth";
 import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 
 export const NewRoomPage = () => {
   const { user } = useAuth();
@@ -19,6 +20,7 @@ export const NewRoomPage = () => {
     if (newRoom.trim() === "") {
       setNewRoom("");
       inputRef.current?.focus();
+      toast.error("Please enter a room code.");
       return;
     }
 
@@ -28,6 +30,7 @@ export const NewRoomPage = () => {
       authorId: user?.id,
     });
 
+    toast.success("Room created");
     router.push(`/rooms/${firebaseRoom.key}`);
   }
 
@@ -52,7 +55,7 @@ export const NewRoomPage = () => {
             className="w-full h-12 px-4 bg-white border border-primary-200 rounded-lg"
           />
 
-          <Button type="submit" mystyle="w-full h-12 mt-4">
+          <Button type="submit" mystyle="w-full mt-4">
             Enter the room
           </Button>
         </form>
@@ -64,6 +67,8 @@ export const NewRoomPage = () => {
           </Link>
         </p>
       </div>
+
+      <Toaster />
     </main>
   );
 };
