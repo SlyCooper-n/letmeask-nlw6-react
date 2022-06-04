@@ -10,6 +10,7 @@
     "merge": "git switch main && git merge dev && git push && git switch dev"
   },
   "dependencies": {
+    "@radix-ui/react-alert-dialog": "^0.1.7",
     "firebase": "^9.8.1",
     "next": "12.1.6",
     "react": "18.1.0",
