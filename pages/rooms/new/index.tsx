@@ -4,13 +4,11 @@ import type { NextPage } from "next";
 
 const NewRoom: NextPage = () => {
   return (
-    <Template>
-      <div className="h-screen flex">
-        <Illustration />
+    <div className="h-screen flex">
+      <Illustration />
 
-        <NewRoomPage />
-      </div>
-    </Template>
+      <NewRoomPage />
+    </div>
   );
 };
 
