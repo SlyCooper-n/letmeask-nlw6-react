@@ -8,7 +8,7 @@ export const Button = ({
     return (
       <button
         {...props}
-        className={`h-12 px-8 flex justify-center items-center border border-primary-500 text-primary-500 font-medium rounded-lg transition-all duration-200 hover:brightness-90 ${props.mystyle}`}
+        className={`h-12 px-8 flex justify-center items-center border border-primary-500 text-primary-500 font-medium rounded-lg transition-all duration-200 hover:bg-primary-500 hover:text-white ${props.mystyle}`}
       >
         {props.children}
       </button>
