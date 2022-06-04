@@ -9,5 +9,7 @@ export type QuestionType = {
   content: string;
   isAnswered: boolean;
   isHighlighted: boolean;
+  likesCount: number;
+  likeId: string | undefined;
   children?: ReactNode | ReactNode[];
 };
