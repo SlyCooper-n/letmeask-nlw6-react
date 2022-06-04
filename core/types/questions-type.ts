@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type QuestionType = {
   id: string;
   author: {
@@ -7,4 +9,5 @@ export type QuestionType = {
   content: string;
   isAnswered: boolean;
   isHighlighted: boolean;
+  children?: ReactNode | ReactNode[];
 };
