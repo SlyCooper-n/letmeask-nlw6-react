@@ -6,6 +6,7 @@ import { Admin } from "components/guards";
 import { useAuth } from "hooks/useAuth";
 import { useRoom } from "hooks/useRoom";
 import { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
@@ -41,6 +42,10 @@ const AdminRoomPage: NextPage = () => {
       roomAuthor={authorID as string}
       roomID={roomID as string}
     >
+      <Head>
+        <title>Admin | Room {title}</title>
+      </Head>
+
       <div className="min-h-screen">
         <header className="p-6 border-b border-[#e2e2e2]">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">

@@ -5,6 +5,7 @@ import { Button, RoomCode } from "@components/widgets";
 import { useAuth } from "hooks/useAuth";
 import { useRoom } from "hooks/useRoom";
 import { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FormEvent, useRef, useState } from "react";
@@ -64,6 +65,10 @@ const RoomPage: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Room {title}</title>
+      </Head>
+
       <header className="p-6 border-b border-[#e2e2e2]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row sm:justify-between sm:items-center">
           <div className="w-fit mx-auto md:ml-0 mb-4 p-2 dark:bg-neutral-300 rounded-lg">
