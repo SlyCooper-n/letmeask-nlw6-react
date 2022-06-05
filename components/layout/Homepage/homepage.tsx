@@ -35,7 +35,12 @@ export const Homepage = () => {
     const room = await db.get(roomRef);
 
     if (!room.exists()) {
-      toast.error("Room does not exist.");
+      toast.error("Room does not exist");
+      return;
+    }
+
+    if (room.val().closedAt) {
+      toast("Room is already closed");
       return;
     }
 
