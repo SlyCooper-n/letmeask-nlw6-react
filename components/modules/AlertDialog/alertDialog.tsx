@@ -1,24 +1,26 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { ReactNode } from "react";
 
-const MyAlertDialog = ({ children }: { children: ReactNode | ReactNode[] }) => (
-  <AlertDialog.Root>
-    <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
+export function Alert({ children }: { children: ReactNode | ReactNode[] }) {
+  return (
+    <AlertDialog.Root>
+      <AlertDialog.Trigger asChild>{children}</AlertDialog.Trigger>
 
-    <AlertDialog.Portal>
-      <AlertDialog.Overlay />
+      <AlertDialog.Portal>
+        <AlertDialog.Overlay className="w-screen h-screen fixed bg-black" />
 
-      <AlertDialog.Content>
-        <AlertDialog.Title />
+        <AlertDialog.Content className="w-screen h-screen fixed bg-white rounded-lg">
+          <AlertDialog.Title>Delete question</AlertDialog.Title>
 
-        <AlertDialog.Description />
+          <AlertDialog.Description>
+            Are you sure you want to delete this question?
+          </AlertDialog.Description>
 
-        <AlertDialog.Cancel />
+          <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
 
-        <AlertDialog.Action />
-      </AlertDialog.Content>
-    </AlertDialog.Portal>
-  </AlertDialog.Root>
-);
-
-export default MyAlertDialog;
+          <AlertDialog.Action>Delete</AlertDialog.Action>
+        </AlertDialog.Content>
+      </AlertDialog.Portal>
+    </AlertDialog.Root>
+  );
+}
