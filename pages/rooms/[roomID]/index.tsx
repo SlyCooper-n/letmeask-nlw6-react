@@ -1,4 +1,4 @@
-import { app, db } from "@/firebase";
+import { app, auth, db } from "@/firebase";
 import { logo } from "@/images";
 import { Question } from "@components/modules";
 import { Button, RoomCode } from "@components/widgets";
@@ -11,11 +11,16 @@ import { FormEvent, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const RoomPage: NextPage = () => {
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const { roomID } = useRouter().query;
   const [newQuestion, setNewQuestion] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { title, questions, loading } = useRoom(roomID as string);
+
+  async function logIn() {
+    await signInWithGoogle();
+    toast.success("Logged in");
+  }
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -107,7 +112,10 @@ const RoomPage: NextPage = () => {
             ) : (
               <span className="text-sm text-[#737380]">
                 To send an ask,{" "}
-                <button className="text-primary-500 text-sm">log in</button>.
+                <button onClick={logIn} className="text-primary-500 text-sm">
+                  log in
+                </button>
+                .
               </span>
             )}
 
