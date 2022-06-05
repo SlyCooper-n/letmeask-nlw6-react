@@ -3,9 +3,6 @@ import { initializeApp } from "firebase/app";
 import * as auth from "firebase/auth";
 import * as db from "firebase/database";
 
-// import { getAuth } from "firebase/auth";
-// import { getDatabase } from "firebase/database";
-
 const app = initializeApp({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
@@ -15,8 +12,5 @@ const app = initializeApp({
   messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_APP_ID,
 });
-
-// const auth = getAuth(app);
-// const db = getDatabase(app);
 
 export { app, auth, db };
