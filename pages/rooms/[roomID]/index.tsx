@@ -56,17 +56,19 @@ const RoomPage: NextPage = () => {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="w-36 h-36 flex justify-center items-center bg-gradient-to-br from-primary-500 to-pink-400 rounded-full animate-spin">
-          <div className="w-4/5 aspect-square bg-white rounded-full"></div>
+          <div className="w-4/5 aspect-square bg-white dark:bg-primary-900 rounded-full"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="">
+    <>
       <header className="p-6 border-b border-[#e2e2e2]">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
-          <Image src={logo} alt="Letmeask" className="max-h-11" />
+          <div className="w-fit mx-auto md:ml-0 p-2 dark:bg-neutral-300 rounded-lg">
+            <Image src={logo} alt="Letmeask" className="max-h-11" />
+          </div>
 
           <RoomCode code={roomID as string} />
         </div>
@@ -74,7 +76,7 @@ const RoomPage: NextPage = () => {
 
       <main className="max-w-[800px] mx-auto px-1">
         <div className="mx-6 my-8 sm:flex sm:items-center">
-          <h1 className="text-2xl text-primary-900 font-secondary font-medium">
+          <h1 className="text-3xl text-primary-900 dark:text-primary-100 font-secondary font-medium">
             Room {title}
           </h1>
 
@@ -92,7 +94,7 @@ const RoomPage: NextPage = () => {
             placeholder="What you want to ask?"
             value={newQuestion}
             onChange={(event) => setNewQuestion(event.target.value)}
-            className="w-full min-h-[130px] p-4 bg-[#fefefe] border-none rounded-lg shadow-md resize-y"
+            className="w-full min-h-[130px] p-4 bg-[#fefefe] dark:bg-neutral-700 dark:placeholder:text-primary-100 border-none rounded-lg shadow-md resize-y"
           />
 
           <div className="mt-4 flex justify-between items-center">
@@ -105,7 +107,7 @@ const RoomPage: NextPage = () => {
                   height={32}
                   className="rounded-full"
                 />
-                <span className="ml-2 inline-block text-primary-900 text-sm font-medium">
+                <span className="ml-2 inline-block text-primary-900 dark:text-primary-100 text-sm font-medium">
                   {user.name}
                 </span>
               </div>
@@ -141,7 +143,7 @@ const RoomPage: NextPage = () => {
           </section>
         )}
 
-        <hr className="my-10" />
+        {questions.length > 0 && <hr className="my-10" />}
 
         <section>
           {questions
@@ -153,10 +155,10 @@ const RoomPage: NextPage = () => {
             ))}
         </section>
 
-        <hr className="my-10" />
+        {questions.length > 0 && <hr className="my-10" />}
 
         {questions.some((question) => question.isAnswered) && (
-          <section>
+          <section className="pb-2">
             <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
 
             {questions
@@ -169,7 +171,7 @@ const RoomPage: NextPage = () => {
       </main>
 
       <Toaster />
-    </div>
+    </>
   );
 };
 

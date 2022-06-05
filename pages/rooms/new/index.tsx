@@ -1,4 +1,4 @@
-import { Template, NewRoomPage } from "@components/layout";
+import { NewRoomPage } from "@components/layout";
 import { Illustration } from "@components/modules";
 import type { NextPage } from "next";
 

@@ -18,10 +18,12 @@ export const Admin = ({
 
   if (!userID) {
     router.push("/");
+    return null;
   }
 
   if (userID !== roomAuthor) {
     router.push(`/rooms/${roomID}`);
+    return null;
   }
 
   return <>{children}</>;

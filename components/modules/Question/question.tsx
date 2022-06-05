@@ -60,12 +60,12 @@ export const Question = (props: QuestionType & { type: "user" | "admin" }) => {
 
   return (
     <div
-      className={`my-2 p-6 bg-primary-100 rounded-lg shadow ${
+      className={`my-2 p-6 rounded-lg shadow ${
         props.isHighlighted && !props.isAnswered
           ? "bg-primary-500 text-white lg:scale-105 shadow-xl"
           : props.isAnswered
           ? "bg-primary-200 opacity-80 shadow-none"
-          : ""
+          : "bg-white dark:bg-neutral-700"
       }`}
     >
       <p>{props.content}</p>
@@ -83,7 +83,9 @@ export const Question = (props: QuestionType & { type: "user" | "admin" }) => {
             className={`ml-2 text-sm ${
               props.isHighlighted && !props.isAnswered
                 ? "text-white"
-                : "text-[#737380]"
+                : props.isAnswered
+                ? "dark:text-primary-100 dark:brightness-90"
+                : "text-[#737380] dark:text-primary-100 dark:brightness-75"
             }`}
           >
             {props.author.name}

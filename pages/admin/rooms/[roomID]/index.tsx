@@ -29,7 +29,7 @@ const AdminRoomPage: NextPage = () => {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="w-36 h-36 flex justify-center items-center bg-gradient-to-br from-primary-500 to-pink-400 rounded-full animate-spin">
-          <div className="w-4/5 aspect-square bg-white rounded-full"></div>
+          <div className="w-4/5 aspect-square bg-white dark:bg-primary-900 rounded-full"></div>
         </div>
       </div>
     );
@@ -45,8 +45,10 @@ const AdminRoomPage: NextPage = () => {
         <header className="p-6 border-b border-[#e2e2e2]">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
             <Image src={logo} alt="Letmeask" className="max-h-11" />
+
             <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-4">
               <RoomCode code={roomID as string} />
+
               <Button outlined onClick={handleCloseRoom}>
                 Close room
               </Button>
@@ -84,7 +86,7 @@ const AdminRoomPage: NextPage = () => {
             </section>
           )}
 
-          <hr className="my-10 brightness-90" />
+          {questions.length > 0 && <hr className="my-10" />}
 
           <section>
             {questions
@@ -96,7 +98,7 @@ const AdminRoomPage: NextPage = () => {
               ))}
           </section>
 
-          <hr className="my-10 brightness-90" />
+          {questions.length > 0 && <hr className="my-10" />}
 
           {questions.some((question) => question.isAnswered) && (
             <section>

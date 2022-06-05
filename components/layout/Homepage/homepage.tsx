@@ -50,7 +50,7 @@ export const Homepage = () => {
   return (
     <main className="px-8 flex-[8] flex justify-center items-center">
       <div className="w-full max-w-xs flex flex-col text-center">
-        <div className="w-3/4 mx-auto">
+        <div className="w-3/4 mx-auto p-2 dark:bg-neutral-300 rounded-lg">
           <Image src={logo} alt="letmeask logo" layout="responsive" />
         </div>
 
@@ -76,7 +76,7 @@ export const Homepage = () => {
             placeholder="Type the room code"
             value={roomCode}
             onChange={(event) => setRoomCode(event.target.value)}
-            className="w-full h-12 px-4 bg-white border border-primary-200 rounded-lg"
+            className="w-full h-12 px-4 bg-white dark:bg-neutral-600 dark:placeholder:text-primary-100 border border-primary-200 rounded-lg"
           />
 
           <Button type="submit" mystyle="w-full mt-4">
