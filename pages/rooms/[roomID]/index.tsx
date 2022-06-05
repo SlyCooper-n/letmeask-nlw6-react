@@ -65,8 +65,8 @@ const RoomPage: NextPage = () => {
   return (
     <>
       <header className="p-6 border-b border-[#e2e2e2]">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
-          <div className="w-fit mx-auto md:ml-0 p-2 dark:bg-neutral-300 rounded-lg">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row sm:justify-between sm:items-center">
+          <div className="w-fit mx-auto md:ml-0 mb-4 p-2 dark:bg-neutral-300 rounded-lg">
             <Image src={logo} alt="Letmeask" className="max-h-11" />
           </div>
 
