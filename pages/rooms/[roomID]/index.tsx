@@ -12,11 +12,10 @@ import toast, { Toaster } from "react-hot-toast";
 
 const RoomPage: NextPage = () => {
   const { user } = useAuth();
-  // const router = useRouter();
   const { roomID } = useRouter().query;
   const [newQuestion, setNewQuestion] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const { title, questions } = useRoom(roomID as string);
+  const { title, questions, loading } = useRoom(roomID as string);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -48,8 +47,18 @@ const RoomPage: NextPage = () => {
     toast.success("Question sent successfully");
   }
 
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <div className="w-36 h-36 flex justify-center items-center bg-gradient-to-br from-primary-500 to-pink-400 rounded-full animate-spin">
+          <div className="w-4/5 aspect-square bg-white rounded-full"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <>
+    <div className="">
       <header className="p-6 border-b border-[#e2e2e2]">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
           <Image src={logo} alt="Letmeask" className="max-h-11" />
@@ -58,7 +67,7 @@ const RoomPage: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-[800px] mx-auto">
+      <main className="max-w-[800px] mx-auto px-1">
         <div className="mx-6 my-8 sm:flex sm:items-center">
           <h1 className="text-2xl text-primary-900 font-secondary font-medium">
             Room {title}
@@ -108,15 +117,51 @@ const RoomPage: NextPage = () => {
           </div>
         </form>
 
-        <section className="mt-8">
-          {questions.map((question) => (
-            <Question key={question.id} type="user" {...question} />
-          ))}
+        {questions.some(
+          (question) => question.isHighlighted && !question.isAnswered
+        ) && (
+          <section className="mt-8">
+            <h2 className="mx-6 mb-4 text-xl">Highlighted question</h2>
+
+            {questions
+              .filter(
+                (question) => question.isHighlighted && !question.isAnswered
+              )
+              .map((question) => (
+                <Question key={question.id} type="user" {...question} />
+              ))}
+          </section>
+        )}
+
+        <hr className="my-10" />
+
+        <section>
+          {questions
+            .filter(
+              (question) => !question.isHighlighted && !question.isAnswered
+            )
+            .map((question) => (
+              <Question key={question.id} type="user" {...question} />
+            ))}
         </section>
+
+        <hr className="my-10" />
+
+        {questions.some((question) => question.isAnswered) && (
+          <section>
+            <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
+
+            {questions
+              .filter((question) => question.isAnswered)
+              .map((question) => (
+                <Question key={question.id} type="user" {...question} />
+              ))}
+          </section>
+        )}
       </main>
 
       <Toaster />
-    </>
+    </div>
   );
 };
 
