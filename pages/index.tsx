@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Homepage, Template } from "@components/layout";
+import { Homepage } from "@components/layout";
 import { Illustration } from "@components/modules";
 
 const Home: NextPage = () => {
