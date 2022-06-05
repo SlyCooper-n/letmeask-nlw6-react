@@ -31,7 +31,7 @@ export const NewRoomPage = () => {
     });
 
     toast.success("Room created");
-    router.push(`/rooms/${firebaseRoom.key}`);
+    router.push(`/admin/rooms/${firebaseRoom.key}`);
   }
 
   return (
