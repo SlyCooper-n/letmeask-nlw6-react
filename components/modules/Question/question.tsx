@@ -191,7 +191,7 @@ export const Question = (props: QuestionType & { type: "user" | "admin" }) => {
                 type="button"
                 aria-label="mark this question as liked"
                 onClick={() => handleLike(props.id, props.likeId)}
-                className="flex items-end gap-2 text-primary-500 transition-all hover:brightness-[0.7]"
+                className="flex items-end gap-2 text-primary-500 transition-all hover:brightness-[0.7] dark:hover:brightness-110"
               >
                 <span className="text-sm text-primary-500">
                   {props.likesCount}
