@@ -1,4 +1,4 @@
-import { app, auth, db } from "@/firebase";
+import { app, db } from "@/firebase";
 import { logo } from "@/images";
 import { Question } from "@components/modules";
 import { Button, RoomCode } from "@components/widgets";
@@ -19,8 +19,13 @@ const RoomPage: NextPage = () => {
   const { title, questions, loading } = useRoom(roomID as string);
 
   async function logIn() {
-    await signInWithGoogle();
-    toast.success("Logged in");
+    try {
+      await signInWithGoogle();
+      toast.success("Logged in");
+    } catch (error) {
+      console.log(error);
+      toast.error("Error logging in");
+    }
   }
 
   async function handleSendQuestion(event: FormEvent) {
@@ -93,7 +98,7 @@ const RoomPage: NextPage = () => {
           )}
         </div>
 
-        <form onSubmit={handleSendQuestion}>
+        <form onSubmit={handleSendQuestion} className="mb-12">
           <textarea
             ref={textareaRef}
             placeholder="What you want to ask?"
@@ -135,43 +140,48 @@ const RoomPage: NextPage = () => {
         {questions.some(
           (question) => question.isHighlighted && !question.isAnswered
         ) && (
-          <section className="mt-8">
-            <h2 className="mx-6 mb-4 text-xl">Highlighted question</h2>
+          <>
+            <section>
+              <h2 className="mx-6 mb-4 text-xl">Highlighted question</h2>
 
-            {questions
-              .filter(
-                (question) => question.isHighlighted && !question.isAnswered
-              )
-              .map((question) => (
-                <Question key={question.id} type="user" {...question} />
-              ))}
-          </section>
+              {questions
+                .filter(
+                  (question) => question.isHighlighted && !question.isAnswered
+                )
+                .map((question) => (
+                  <Question key={question.id} type="user" {...question} />
+                ))}
+            </section>
+
+            <hr className="my-10" />
+          </>
         )}
-
-        {questions.length > 0 && <hr className="my-10" />}
 
         <section>
           {questions
             .filter(
               (question) => !question.isHighlighted && !question.isAnswered
             )
+            .sort((a, b) => b?.likesCount - a?.likesCount)
             .map((question) => (
               <Question key={question.id} type="user" {...question} />
             ))}
         </section>
 
-        {questions.length > 0 && <hr className="my-10" />}
-
         {questions.some((question) => question.isAnswered) && (
-          <section className="pb-2">
-            <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
+          <>
+            <hr className="my-10" />
 
-            {questions
-              .filter((question) => question.isAnswered)
-              .map((question) => (
-                <Question key={question.id} type="user" {...question} />
-              ))}
-          </section>
+            <section className="pb-2">
+              <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
+
+              {questions
+                .filter((question) => question.isAnswered)
+                .map((question) => (
+                  <Question key={question.id} type="user" {...question} />
+                ))}
+            </section>
+          </>
         )}
       </main>
 

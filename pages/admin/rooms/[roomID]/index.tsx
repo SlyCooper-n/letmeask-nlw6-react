@@ -49,7 +49,9 @@ const AdminRoomPage: NextPage = () => {
       <div className="min-h-screen">
         <header className="p-6 border-b border-[#e2e2e2]">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
-            <Image src={logo} alt="Letmeask" className="max-h-11" />
+            <div className="w-fit mx-auto md:ml-0 mb-4 p-2 dark:bg-neutral-300 rounded-lg">
+              <Image src={logo} alt="Letmeask" className="max-h-11" />
+            </div>
 
             <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-4">
               <RoomCode code={roomID as string} />
@@ -63,7 +65,7 @@ const AdminRoomPage: NextPage = () => {
 
         <main className="max-w-[800px] mx-auto px-1">
           <div className="mx-6 my-8 sm:flex sm:items-center">
-            <h1 className="text-3xl text-primary-900 font-secondary font-medium">
+            <h1 className="text-3xl text-primary-900 dark:text-primary-100 font-secondary font-medium">
               Room {title}
             </h1>
 
@@ -78,43 +80,48 @@ const AdminRoomPage: NextPage = () => {
           {questions.some(
             (question) => question.isHighlighted && !question.isAnswered
           ) && (
-            <section>
-              <h2 className="mx-6 mb-4 text-xl">Highlighted question</h2>
+            <>
+              <section>
+                <h2 className="mx-6 mb-4 text-xl">Highlighted question</h2>
 
-              {questions
-                .filter(
-                  (question) => question.isHighlighted && !question.isAnswered
-                )
-                .map((question) => (
-                  <Question key={question.id} type="admin" {...question} />
-                ))}
-            </section>
+                {questions
+                  .filter(
+                    (question) => question.isHighlighted && !question.isAnswered
+                  )
+                  .map((question) => (
+                    <Question key={question.id} type="admin" {...question} />
+                  ))}
+              </section>
+
+              <hr className="my-10" />
+            </>
           )}
-
-          {questions.length > 0 && <hr className="my-10" />}
 
           <section>
             {questions
               .filter(
                 (question) => !question.isHighlighted && !question.isAnswered
               )
+              .sort((a, b) => b?.likesCount - a?.likesCount)
               .map((question) => (
                 <Question key={question.id} type="admin" {...question} />
               ))}
           </section>
 
-          {questions.length > 0 && <hr className="my-10" />}
-
           {questions.some((question) => question.isAnswered) && (
-            <section>
-              <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
+            <>
+              <hr className="my-10" />
 
-              {questions
-                .filter((question) => question.isAnswered)
-                .map((question) => (
-                  <Question key={question.id} type="admin" {...question} />
-                ))}
-            </section>
+              <section>
+                <h2 className="mx-6 mb-4 text-xl">Answered questions</h2>
+
+                {questions
+                  .filter((question) => question.isAnswered)
+                  .map((question) => (
+                    <Question key={question.id} type="admin" {...question} />
+                  ))}
+              </section>
+            </>
           )}
         </main>
 
