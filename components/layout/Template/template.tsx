@@ -12,6 +12,8 @@ export const Template = ({ children }: TemplateProps) => {
           content="Q&amp;A rooms for content creators."
         />
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="theme-color" content="#835afd" />
       </Head>
 
       {children}
