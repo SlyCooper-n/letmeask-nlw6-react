@@ -3,7 +3,7 @@
   "short_name": "Letmeask",
   "theme_color": "#835afd",
   "background_color": "#ffffff",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
