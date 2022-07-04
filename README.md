@@ -1,3 +1,9 @@
+<div align="center">
+
+<img alt="Letmeask logo" src="./_docs/logo.svg" />
+<br />
+<br />
+
 # Letmeask | Q&A rooms
 
 ![Github](https://img.shields.io/badge/Gabe%20Frasz-Letmeask-gold?style=flat-square)
@@ -5,23 +11,41 @@
 [![GitHub license](https://img.shields.io/github/license/SlyCooper-n/letmeask-nlw6-react?style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE)
 [![Github](https://img.shields.io/badge/-Rockeseat-purple?style=flat-square)](https://github.com/SlyCooper-n)
 
+</div>
+
 > Project made together with Rockeseat to practise Next.js and Firebase.
 
 <br />
 <br />
-<p align="center">
-  <img alt="Letmeask logo" src="./_docs/logo.svg" />
-</p>
 
 ## :pushpin: About
 
-## :hammer: Main tools used
+## :hammer: Main tools and libs used
 
-- [React](https://reactjs.org/)
+<details>
+<summary>
+Base tools
+</summary>
+
 - [Next.js](https://nextjs.org/)
 - [Firebase](https://firebase.google.com/)
-- [Tailwind](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+</details>
+
+<details>
+<summary>
+Styling
+</summary>
+
+- [Tailwind](https://tailwindcss.com/)
+</details>
+
+<details>
+<summary>
+Linters and Formatters
+</summary>
+
+</details>
 
 ## :sparkles: Features
 
