@@ -16,3 +16,7 @@
 ## Want to see what's coming next?
 
 [Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
+
+## License
+
+[MIT](https://github.com/SlyCooper-n/letmeask-nlw6-react/LICENSE.md) &copy; [Gabriel VS Frasão](https://github.com/SlyCooper-n)
