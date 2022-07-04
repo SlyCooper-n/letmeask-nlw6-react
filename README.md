@@ -9,6 +9,7 @@
 ![Github](https://img.shields.io/badge/Gabe%20Frasz-Letmeask-gold?style=flat-square)
 ![Github issues](https://img.shields.io/github/issues/SlyCooper-n/letmeask-nlw6-react?color=red&style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/SlyCooper-n/letmeask-nlw6-react?style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE)
+![Github commit](https://img.shields.io/github/last-commit/SlyCooper-n/letmeask-nlw6-react?color=blue&style=flat-square)
 [![Github](https://img.shields.io/badge/-Rockeseat-purple?style=flat-square)](https://github.com/SlyCooper-n)
 
 </div>
@@ -46,13 +47,16 @@ Styling
 Linters and Formatters
 </summary>
 
+_ [ESLing](https://eslint.org/)
+_ [Prettier](https://prettier.io/)
+- [.editorConfig](https://editorconfig.org/)
 </details>
 
 ## :sparkles: Features
 
-- Real-time rooms
-- PWA support
-- Theme based on device system
+- [x] Real-time rooms
+- [x] PWA support
+- [x] Theme based on device system
 
 ### :eye: Curious to see what's coming next?
 
