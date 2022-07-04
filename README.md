@@ -58,7 +58,7 @@ npm run dev
 
 ## :brain: Thinking of contributing to the project?
 
-Clone the repo as shown above :arrow_up: and follow [this little guide](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/CONTRIBUTING.md)
+Clone the repo as shown above :arrow_up: and follow [this little guide](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/_docs/CONTRIBUTING.md)
 
 ## :desktop_computer: Deploy
 
