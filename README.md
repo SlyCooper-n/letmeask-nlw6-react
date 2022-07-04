@@ -7,6 +7,10 @@
 
 > Project made together with Rockeseat to practise Next.js and Firebase.
 
+<p align="center">
+  <img alt="Letmeask logo" src="./_docs/logo.png" />
+</p>
+
 ## Want to see what's coming next?
 
 [Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
