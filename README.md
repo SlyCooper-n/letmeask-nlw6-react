@@ -7,8 +7,10 @@
 
 > Project made together with Rockeseat to practise Next.js and Firebase.
 
+<br />
+<br />
 <p align="center">
-  <img alt="Letmeask logo" src="./_docs/logo.png" />
+  <img alt="Letmeask logo" src="./_docs/logo.svg" />
 </p>
 
 ## Want to see what's coming next?
