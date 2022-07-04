@@ -5,4 +5,8 @@
 [![GitHub license](https://img.shields.io/github/license/SlyCooper-n/letmeask-nlw6-react?style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE)
 [![Github](https://img.shields.io/badge/-Rockeseat-purple?style=flat-square)](https://github.com/SlyCooper-n)
 
-Project made together with Rockeseat to practise Next.js and Firebase.
+> Project made together with Rockeseat to practise Next.js and Firebase.
+
+## Want to see what's coming next?
+
+[Click right here](https://github.com/SlyCopper-n/letmeask-nlw6-react)
