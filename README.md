@@ -16,7 +16,8 @@
 > Project made together with Rockeseat to practise Next.js and Firebase.
 
 <br />
-<br />
+
+<img alt="Letmeask homepage banner" src="./_docs/banner.jpeg" />
 
 ## :pushpin: About
 
