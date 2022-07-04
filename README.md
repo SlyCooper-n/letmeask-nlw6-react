@@ -13,12 +13,15 @@
   <img alt="Letmeask logo" src="./_docs/logo.svg" />
 </p>
 
+## :pushpin: Objective
+
 ## :hammer: Main tools used
 
-- React
-- Next.js
-- Firebase
-- Tailwind
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Firebase](https://firebase.google.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## :sparkles: Features
 
@@ -26,11 +29,36 @@
 - PWA support
 - Theme based on device system
 
-## :eye: Want to see what's coming next?
+### :eye: Want to see what's coming next?
 
 [Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
 
-## :rocket: Deploy
+## :rocket: Running this project
+
+**Clone on your machine** (I personally use Github CLI)
+```bash
+# by git
+git clone https://github.com/SlyCooper-n/letmeask-nlw6-react.git
+
+# or by Github CLI
+gh repo clone SlyCooper-n/letmeask-nlw6-react
+```
+
+**Set every thing up**
+```bash
+# enter the source folder
+cd letmeask-nlw6-react
+
+# install dependencies
+npm install
+
+# run on development mode
+npm run dev
+```
+
+## How can I contribute?
+
+## :desktop_computer: Deploy
 
 On Vercel: https://letmeask-nlw6-react.vercel.app/
 
