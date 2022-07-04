@@ -13,14 +13,27 @@
   <img alt="Letmeask logo" src="./_docs/logo.svg" />
 </p>
 
-## Want to see what's coming next?
+## :hammer: Main tools used
+
+- React
+- Next.js
+- Firebase
+- Tailwind
+
+## :sparkles: Features
+
+- Real-time rooms
+- PWA support
+- Theme based on device system
+
+## :eye: Want to see what's coming next?
 
 [Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
 
-## Deploy
+## :rocket: Deploy
 
 On Vercel: https://letmeask-nlw6-react.vercel.app/
 
-## License
+## :memo: License
 
 [MIT License](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE) &copy; [Gabriel VS Frasão](https://github.com/SlyCooper-n)
