@@ -47,8 +47,8 @@ Styling
 Linters and Formatters
 </summary>
 
-_ [ESLing](https://eslint.org/)
-_ [Prettier](https://prettier.io/)
+- [ESLing](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 - [.editorConfig](https://editorconfig.org/)
 </details>
 
