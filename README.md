@@ -9,4 +9,4 @@
 
 ## Want to see what's coming next?
 
-[Click right here](https://github.com/SlyCopper-n/letmeask-nlw6-react)
+[Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
