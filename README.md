@@ -19,4 +19,4 @@
 
 ## License
 
-[MIT License](https://github.com/SlyCooper-n/letmeask-nlw6-react/LICENSE) &copy; [Gabriel VS Frasão](https://github.com/SlyCooper-n)
+[MIT License](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE) &copy; [Gabriel VS Frasão](https://github.com/SlyCooper-n)
