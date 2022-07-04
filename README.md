@@ -46,7 +46,7 @@ gh repo clone SlyCooper-n/letmeask-nlw6-react
 
 **Set every thing up**
 ```bash
-# enter the source folder
+# enter the project folder
 cd letmeask-nlw6-react
 
 # install dependencies
