@@ -13,7 +13,7 @@
   <img alt="Letmeask logo" src="./_docs/logo.svg" />
 </p>
 
-## :pushpin: Objective
+## :pushpin: About
 
 ## :hammer: Main tools used
 
@@ -29,7 +29,7 @@
 - PWA support
 - Theme based on device system
 
-### :eye: Want to see what's coming next?
+### :eye: Curious to see what's coming next?
 
 [Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
 
@@ -56,7 +56,9 @@ npm install
 npm run dev
 ```
 
-## How can I contribute?
+## :brain: Thinking of contributing to the project?
+
+Clone the repo as shown above :arrow_up: and follow [this little guide](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/CONTRIBUTING.md)
 
 ## :desktop_computer: Deploy
 
