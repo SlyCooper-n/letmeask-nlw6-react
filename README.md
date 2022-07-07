@@ -6,8 +6,8 @@
 
 # Letmeask | Q&A rooms
 
-![Github](https://img.shields.io/badge/Gabe%20Frasz-Letmeask-gold?style=flat-square)
-[![Github issues](https://img.shields.io/github/issues/SlyCooper-n/letmeask-nlw6-react?color=red&style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/)
+[![Github](https://img.shields.io/badge/Gabe%20Frasz-Letmeask-gold?style=flat-square)](https://github.com/SlyCooper-n)
+[![Github issues](https://img.shields.io/github/issues/SlyCooper-n/letmeask-nlw6-react?color=red&style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/issues)
 [![GitHub license](https://img.shields.io/github/license/SlyCooper-n/letmeask-nlw6-react?style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/LICENSE)
 ![Github commit](https://img.shields.io/github/last-commit/SlyCooper-n/letmeask-nlw6-react?color=blue&style=flat-square)
 [![Github](https://img.shields.io/badge/-Rockeseat-purple?style=flat-square)](https://github.com/Rocketseat)
