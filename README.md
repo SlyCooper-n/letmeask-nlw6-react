@@ -15,7 +15,13 @@
 
 </div>
 
+<br />
+
 > Project made together with Rockeseat to practise Next.js and Firebase.
+
+| Status | Project |
+| --- | --- |
+| ![Github deployments](https://img.shields.io/github/deployments/slycooper-n/letmeask-nlw6-react/production?label=vercel&logo=vercel&logoColor=white) | [Site](https://letmeask-nlw6-react.verce.app)
 
 <br />
 
