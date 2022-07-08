@@ -21,8 +21,7 @@
 
 | Status | Project |
 | --- | --- |
-| ![Github deployments](https://img.shields.io/github/deployments/slycooper-n/letmeask-nlw6-react/production?label=vercel&logo=vercel&logoColor=white) | [Site](https://letmeask-nlw6-react.verce.app)
-
+| ![Github deployments](https://img.shields.io/github/deployments/slycooper-n/letmeask-nlw6-react/production?label=vercel&logo=vercel&logoColor=white) | [Site](https://letmeask-nlw6-react.vercel.app) |
 <br />
 
 <img alt="Letmeask homepage banner" src="./_docs/banner.jpeg" />
