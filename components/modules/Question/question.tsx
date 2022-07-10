@@ -1,5 +1,5 @@
 import { app, db } from "@/firebase";
-import { useAuth } from "@core/hooks/useAuth";
+import { useAuth } from "@core/hooks";
 import { QuestionType } from "@core/types";
 import Image from "next/image";
 import { useRouter } from "next/router";

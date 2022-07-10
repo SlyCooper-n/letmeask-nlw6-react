@@ -1,5 +1,5 @@
+import { TemplateProps } from "@core/types";
 import Head from "next/head";
-import { TemplateProps } from "@/types";
 
 export const Template = ({ children }: TemplateProps) => {
   return (

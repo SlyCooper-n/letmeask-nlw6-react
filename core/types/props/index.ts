@@ -1,3 +1,4 @@
+export * from "./adminGuard-props";
 export * from "./auth-props";
 export * from "./button-props";
 export * from "./databaseRoom-props";

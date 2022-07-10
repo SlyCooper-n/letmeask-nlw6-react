@@ -1,10 +1,10 @@
-import { FormEvent, useRef, useState } from "react";
+import { app, db } from "@/firebase";
+import { googleIcon, logo } from "@/images";
+import { useAuth } from "@core/hooks";
+import { Button } from "components/widgets/Button";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Button } from "components/widgets/Button";
-import { useAuth } from "@/hooks";
-import { googleIcon, logo } from "@/images";
-import { app, db } from "@/firebase";
+import { FormEvent, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export const Homepage = () => {

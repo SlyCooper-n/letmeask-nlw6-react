@@ -1,5 +1,5 @@
 import { copy } from "@/images";
-import { RoomCodeProps } from "@/types";
+import { RoomCodeProps } from "@core/types";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
 
