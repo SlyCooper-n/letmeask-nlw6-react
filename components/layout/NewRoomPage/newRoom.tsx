@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { Button } from "components/widgets/Button";
-import Link from "next/link";
-import { logo } from "@/images";
-import { FormEvent, useRef, useState } from "react";
 import { app, db } from "@/firebase";
-import { useAuth } from "hooks/useAuth";
+import { logo } from "@/images";
+import { Button } from "@components/widgets/";
+import { useAuth } from "@core/hooks/";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { FormEvent, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export const NewRoomPage = () => {
