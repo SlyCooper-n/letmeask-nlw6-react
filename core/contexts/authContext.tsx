@@ -1,5 +1,5 @@
 import { app, auth } from "@/firebase";
-import { AuthContextProps, UserType } from "@/types";
+import { AuthContextProps, UserType } from "@core/types";
 import React, { ReactNode, useEffect, useState } from "react";
 
 export const AuthContext = React.createContext({} as AuthContextProps);
