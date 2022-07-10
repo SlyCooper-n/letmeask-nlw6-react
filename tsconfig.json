@@ -14,17 +14,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["vitest/globals"],
     "baseUrl": ".",
     "paths": {
-      "@/types": ["core/types"],
-      "@components/guards": ["components/guards"],
-      "@components/layout": ["components/layout"],
-      "@components/modules": ["components/modules"],
-      "@components/widgets": ["components/widgets"],
-      "@/firebase": ["core/services/firebase"],
+      "@components/*": ["components/*"],
+      "@core/*": ["core/*"],
+      "@/icons": ["public/icons"],
       "@/images": ["public/images"],
-      "@/contexts": ["contexts"],
-      "@/hooks": ["hooks"]
+      "@/firebase": ["core/services/firebase"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

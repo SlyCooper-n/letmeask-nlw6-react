@@ -1,6 +1,6 @@
 import { app, db } from "@/firebase";
-import { QuestionType } from "@/types";
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "@core/hooks/useAuth";
+import { QuestionType } from "@core/types";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";

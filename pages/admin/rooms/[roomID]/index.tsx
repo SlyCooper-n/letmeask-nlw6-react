@@ -1,10 +1,9 @@
 import { app, db } from "@/firebase";
 import { logo } from "@/images";
+import { Admin } from "@components/guards";
 import { Question } from "@components/modules";
 import { Button, RoomCode } from "@components/widgets";
-import { Admin } from "components/guards";
-import { useAuth } from "hooks/useAuth";
-import { useRoom } from "hooks/useRoom";
+import { useAuth, useRoom } from "@core/hooks/";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";

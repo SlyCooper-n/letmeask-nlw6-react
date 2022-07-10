@@ -1,5 +1,5 @@
 import { app, db } from "@/firebase";
-import { DatabaseRoomProps, QuestionType } from "@/types";
+import { DatabaseRoomProps, QuestionType } from "@core/types";
 import { useEffect, useState } from "react";
 import { useAuth } from "./useAuth";
 
