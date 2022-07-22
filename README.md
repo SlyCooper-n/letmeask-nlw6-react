@@ -4,7 +4,7 @@
 <br />
 <br />
 
-# Letmeask | Q&A rooms
+# Letmeask | Q&A rooms (broken)
 
 [![My Github](https://img.shields.io/badge/Gabe%20Frasz-Letmeask-gold?style=flat-square)](https://github.com/SlyCooper-n)
 [![Repo version](https://img.shields.io/github/package-json/v/slycooper-n/letmeask-nlw6-react?style=flat-square)](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/package.json)
