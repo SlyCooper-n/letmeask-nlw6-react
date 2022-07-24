@@ -28,7 +28,7 @@
 
 ## :pushpin: About
 
-This project was developed together with [Rocketseat](https://github.com/Rocketseat) and [Diego Fernandes](https://github.com/diego3g) in NLW #6 in order to practise web development using Next.js and Firebase to provide real-time rooms. I'll be improving this project from now on to keep evolving my knowledge and maybe create something cool for people to use. Actually, I've made some small features on top of the boilerplate provided by the class, like PWA and dark mode support. But that's not all, I'm aiming to add [this feedback feature](https://github.com/SlyCooper-n/feedback-widget-nlw-08) inside this web app in the near future as well as CI with Github Actions.
+This project was developed together with [Rocketseat](https://github.com/Rocketseat) and [Diego Fernandes](https://github.com/diego3g) in NLW #6 in order to practise web development using Next.js and Firebase to provide real-time rooms. **Currently this project is broken** and I don't know how to fix it, so I decided to build a new one, which you can see [here](https://github.com/SlyCooper-n/onlyrooms).
 > For more information about my dev journey, consider visiting my [LinkedIn](https://linkedin.com/in/gabriel-vs-frasao).
 
 ## :hammer: Main tools and libs used
@@ -69,38 +69,11 @@ Linters and Formatters
 
 ### :eye: Curious to see what's coming next?
 
-[Stay tuned right here](https://github.com/SlyCooper-n/letmeask-nlw6-react/projects/1)
-
-## :rocket: Running this project
-
-**Clone on your machine** (I personally use Github CLI)
-```bash
-# by git
-git clone https://github.com/SlyCooper-n/letmeask-nlw6-react.git
-
-# or by Github CLI
-gh repo clone SlyCooper-n/letmeask-nlw6-react
-```
-
-**Set every thing up**
-```bash
-# enter the project folder
-cd letmeask-nlw6-react
-
-# install dependencies
-npm install
-
-# run on development mode
-npm run dev
-```
+[Stay tuned right here](https://github.com/users/SlyCooper-n/projects/3)
 
 ## :brain: Thinking of contributing to the project?
 
 Clone the repo as shown above :arrow_up: and follow [this little guide](https://github.com/SlyCooper-n/letmeask-nlw6-react/blob/main/_docs/CONTRIBUTING.md)
-
-## :desktop_computer: Deploy
-
-On Vercel: https://letmeask-nlw6-react.vercel.app/
 
 ## :memo: License
 
